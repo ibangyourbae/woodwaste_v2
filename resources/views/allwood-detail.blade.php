@@ -10,7 +10,7 @@
             @foreach($store->wood as $wood)
             @if($wood->image)
             <div class="col-6">
-                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn">
+                {{-- <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn"> --}}
                     <div class="card mb-2 mt-2 card2">
                         <div class="card-body" style="background-image:url({{ asset('storage/'.$wood->image) }});">
                         </div>
@@ -20,11 +20,11 @@
                             <h2>Harga : @currency($wood->price) | Stok : {{ $wood->stock }}</h2>
                         </div>
                     </div>
-                </a>
+                {{-- </a> --}}
             </div>
             @else
             <div class="col-6">
-                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn">
+                {{-- <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn"> --}}
                     <div class="card mb-2 mt-2 card2">
                         <div class="card-body" style="background-image:url(https://source.unsplash.com/1200x400?wood);">
                         </div>
@@ -33,7 +33,7 @@
                             <h2>Harga : @currency($wood->price) | Stok : {{ $wood->stock }}</h2>
                         </div>
                     </div>
-                </a>
+                {{-- </a> --}}
             </div>
             @endif
             @endforeach

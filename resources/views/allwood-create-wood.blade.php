@@ -37,14 +37,7 @@
                             <label for="image" class="form-label">Gambar Kerajinan Anda</label>
                             <input class="form-control" type="file" id="image" name="image" required accept=".jpg, .png, .jpeg">
                         </div>
-                        <div class="mb-3">
-                            <label for="body" class="form-label">Deskripsi </label>
-                            @error('body')
-                            <p class="text-danger">{{ $message }}</p>
-                            @enderror
-                            <input id="body" type="hidden" name="body" value="{{ old('body') }}">
-                            <trix-editor input="body"></trix-editor>
-                        </div>
+
                         <button type="submit" class="btn mt-3" style="background-color:#B3DAD5;">Kirim</button>
                     </form>
                 </div>

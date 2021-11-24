@@ -22,7 +22,7 @@ class CreateAllWoodTable extends Migration
             $table->integer('price');
             $table->string('slug');
             $table->timestamps();
-            $table->text('body');
+
         });
     }
 

@@ -17,7 +17,9 @@
             </div>
         </div>
         @endif
-
+        <a href="/allwood/{{ $store->slug }}/edit"><button type="button" class="btn btn-warning">Ubah Toko</button></a>
+ 
+        <br>
         <br>
         <h1 class="justify-content-center" style="font-weight: bold;">Kerajinan Saya</h1>
         <div class="row mt-3">
@@ -29,7 +31,7 @@
             @foreach($store->wood as $wood)
             @if($wood->image)
             <div class="col-6">
-                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn"> 
+                {{-- <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn">  --}}
                 <div class="card mb-2 mt-2 card2">
                     <div class="card-body" style="background-image:url({{ asset('storage/' . $wood->image) }});">
                     </div>
@@ -38,11 +40,20 @@
                         <h2>Harga : @currency($wood->price) | Stok : {{ $wood->stock }}</h2>
                     </div>
                 </div>
-                </a> 
+                {{-- </a>  --}}
+                <a href="/allwood/edit/{{ $wood->id }}"><button type="button" class="btn btn-warning">Edit</button></a>
+                <form action="/allwood/delete/{{ $wood->id }}" method="POST" class="d-inline">
+                    @method('DELETE')
+                    @csrf
+                      <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin  ?')">                                                
+                        Delete</button>
+                </form>
+                
             </div>
+            
             @else
             <div class="col-6">
-                 <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn"> 
+                 {{-- <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn">  --}}
                 <div class="card mb-2 mt-2 card2">
                     <div class="card-body" style="background-image:url(https://source.unsplash.com/1200x400?wood);">
                     </div>
@@ -51,7 +62,9 @@
                         <h2>Harga : @currency($wood->price) | Stok : {{ $wood->stock }}</h2>
                     </div>
                 </div>
-                </a> 
+                {{-- </a>  --}}
+                <a href="/allwood/edit/{{ $wood->id }}"><button type="button" class="btn btn-warning">Edit</button></a>
+                <button type="button" class="btn btn-danger">Delete</button>
             </div>
             @endif
             @endforeach
@@ -81,7 +94,7 @@
                         <p>Deskripsi </p>
                     </div>
                     <div class="col-10">
-                        <p> : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, numquam. Aut quidem ipsum reiciendis laborum voluptatum pariatur neque quia dolorum, fugit expedita, in autem, consectetur incidunt officia molestiae eos velit!</p>
+                        <p> : {!! $wood->body !!}</p>
                     </div>
                 </div>
             </div>

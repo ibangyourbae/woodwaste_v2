@@ -80,6 +80,8 @@ Route::get('/allwood',function(){
 
 Route::get('/allwood/{store:slug}', [AllWoodController::class, 'showStore']);
 Route::get('/allwood/allwood-my-store/{store:slug}',[AllWoodController::class, 'showMyStore'])->middleware('auth');
+Route::get('/allwood/{store:slug}/edit', [AllWoodController::class, 'editStore'])->middleware('auth');
+Route::post('/allwood/{store:slug}/update', [AllWoodController::class, 'updateStore'])->middleware('auth');
 
 Route::get('/admin',function(){
     $woodpedia = DB::table('woodpedias')->get();
@@ -144,6 +146,10 @@ Route::get('/kontak',function(){
 
 Route::get('/allwood-create-wood',[WoodController::class,'create'])->middleware('auth');
 Route::post('/allwood-create-wood',[WoodController::class,'store'])->middleware('auth');
+
+Route::get('/allwood/edit/{id}',[WoodController::class,'edit'])->middleware('auth');
+Route::post('/allwood/update/{id}',[WoodController::class,'update'])->middleware('auth');
+Route::delete('/allwood/delete/{id}',[WoodController::class,'destroy'])->middleware('auth');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);

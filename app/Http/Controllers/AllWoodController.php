@@ -6,6 +6,7 @@ use App\Models\AllWood;
 use App\Models\Store;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Storage;
 
 class AllWoodController extends Controller
 {
@@ -60,6 +61,48 @@ class AllWoodController extends Controller
         Store::create($validatedData);
         return redirect('/allwood')->with('success', 'Toko Berhasil di buat !');
     }
+    public function editStore(Store $store){
+        
+        return view('/allwood-edit',[
+            'store' => $store,
+            'title' => 'All Wood',
+            'css' => 'Allwood',
+            'active' => 'allwood'
+        ]);
+    }
+    public function updateStore(Request $request, $id, Store $store){
+        return $request;
+        $rules = [
+            'store_name' => 'required',
+            'store_address' => 'required',
+            'store_phone' => 'required',
+            'image' => 'image'
+        ];
+
+        if($request->slug != $store->slug){
+            $rules['slug'] = 'required|unique:woodpedias';
+        }
+
+        $validatedData = $request->validate($rules);
+        if($request->file('image')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('images-wood');
+        }
+        $validatedData['store_id'] = auth()->user()->id;
+        $validatedData['slug'] = SlugService::createSlug(Store::class, 'slug', $validatedData['store_name']);
+        
+
+        Store::where('id',$id)->update($validatedData);
+        // $woodpedia = Woodpedia::find($id)->update($request->all());
+        
+        return redirect('/allwood')->with('success', 'Toko Berhasil di update !');
+
+
+    }
+
+    
 
     // public function storeWood(Request $request){
     //     return $request;
