@@ -1,0 +1,263 @@
+body {
+    font-family: 'kanit', sans-serif;
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 14px;
+}
+
+p {
+    font-size: 14px;
+}
+
+
+/* navbar top-bottom */
+
+.navbar-top {
+    background-color: #B3DAD5;
+}
+
+.navbar-bottom {
+    background-color: #C4C4C4;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+a {
+    text-align: center;
+}
+
+a:hover {
+    color-adjust: 4;
+}
+
+.nav-link {
+    color: grey;
+}
+
+ul {
+    align-items: center;
+}
+
+i {
+    font-size: 30px;
+}
+
+
+/* end navbar */
+
+
+/* card */
+
+.card1 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    background-image: url('img/Group_94.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 296px;
+}
+
+.card-title {
+    font-weight: bold;
+    color: #4F574C;
+}
+
+.card-btn {
+    width: 122px;
+    height: 40px;
+    background-color: #B3DAD5;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+.card2 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-image: url('../images/Group\ 90\ \(5\).png');
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+.title1 {
+    font-size: 48px;
+    color: #4A6D65;
+    text-align: center;
+}
+
+.title2 {
+    font-size: 48px;
+    color: #EBDBC2;
+    text-align: center;
+}
+
+.title3 {
+    font-size: 48px;
+    color: #E7B34C;
+    text-align: center;
+}
+
+.title4 {
+    font-size: 48px;
+    color: #C4BFB9;
+    text-align: center;
+}
+
+sub {
+    font-size: small;
+}
+
+.img-thumbnail {
+    border-radius: 20px;
+    height: 85px;
+    width: 85px;
+}
+
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+
+@media (max-width: 767px) {
+    body {
+        font-size: 9px;
+    }
+    h1 {
+        font-size: 14px;
+    }
+    h2 {
+        font-size: 9px;
+    }
+    .nav-link {
+        font-size: 8px;
+    }
+    i {
+        font-size: 12px;
+    }
+    p {
+        font-size: 9px;
+    }
+    .card1 {
+        border-color: #4F574C;
+        border-radius: 20px;
+        border-style: calc();
+        background-image: url('../img/Group_90.png');
+        background-position: right bottom;
+        background-repeat: no-repeat;
+        justify-content: space-between;
+        height: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    .card-btn {
+        width: 63px;
+        height: 23px;
+        font-size: 12px;
+    }
+    .img-thumbnail {
+        border-radius: 10px;
+        height: 60px;
+        width: 60px;
+        justify-content: end;
+        position: absolute;
+    }
+    h5 {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 352px) {
+    body {
+        font-size: 9px;
+    }
+    h1 {
+        font-size: 12px;
+    }
+    h2 {
+        font-size: 9px;
+    }
+    .nav-link {
+        font-size: 5px;
+    }
+    i {
+        font-size: 5px;
+    }
+    p {
+        font-size: 5px;
+    }
+    .card1 {
+        border-color: #4F574C;
+        border-radius: 20px;
+        border-style: calc();
+        background-image: url('../img/Group_90.png');
+        background-position: right bottom;
+        background-repeat: no-repeat;
+        justify-content: space-between;
+        height: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    .card-btn {
+        width: 63px;
+        height: 23px;
+        font-size: 10px;
+    }
+    .img-thumbnail {
+        border-radius: 10px;
+        height: 60px;
+        width: 60px;
+        justify-content: end;
+        position: absolute;
+    }
+    h5 {
+        font-size: 5px;
+    }
+}
+
+@media (max-width: 289px) {
+    body {
+        font-size: 5px;
+    }
+    h1 {
+        font-size: 10px;
+    }
+    h2 {
+        font-size: 7px;
+    }
+    .nav-link {
+        font-size: 3px;
+    }
+    i {
+        font-size: 5px;
+    }
+    p {
+        font-size: 3px;
+    }
+    .card1 {
+        border-color: #4F574C;
+        border-radius: 20px;
+        border-style: calc();
+        background-image: url('../img/Group_90.png');
+        background-position: right bottom;
+        background-repeat: no-repeat;
+        justify-content: space-between;
+        height: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    .card-btn {
+        width: 63px;
+        height: 20px;
+        font-size: 8px;
+    }
+    .img-thumbnail {
+        border-radius: 10px;
+        height: 60px;
+        width: 60px;
+        justify-content: end;
+        position: absolute;
+    }
+    h5 {
+        font-size: 3px;
+    }
+}

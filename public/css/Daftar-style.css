@@ -1,0 +1,75 @@
+body {
+    font-family: 'roboto', sans-serif;
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 50%;
+}
+
+h2 {
+    font-size: 14px;
+    opacity: 50%;
+}
+
+p {
+    font-size: 14px;
+}
+
+
+/* navbar top */
+
+.navbar-top {
+    background-color: #B3DAD5;
+}
+
+
+/* card */
+
+.card1 {
+    width: 400px;
+    background-color: #B3DAD5;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.card2 {
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+    position: relative
+}
+
+.form-control {
+    border-radius: 40px;
+    height: 70px;
+    border-width: 4px;
+    border-color: #727970;
+}
+
+.form-select {
+    border-radius: 40px;
+    height: 70px;
+    border-width: 4px;
+    border-color: #727970;
+}
+
+.btn {
+    width: 100%;
+    border-radius: 40px;
+    height: 70px;
+    background-color: #727970;
+}
+
+option {
+    background-color: #727970;
+}
+
+
+/* container */
+
+.container {
+    align-self: center;
+}
