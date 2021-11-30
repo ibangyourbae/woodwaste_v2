@@ -65,15 +65,15 @@ class DatabaseSeeder extends Seeder
 
         Wooddata::create([
             'title' => 'Sisa pembuatan kapal',
-            'jumlah' => '5'
+            'jumlah' => 5
         ]);
         Wooddata::create([
             'title' => 'Sisa pembuatan furniture',
-            'jumlah' => '27'
+            'jumlah' => 27
         ]);
         Wooddata::create([
             'title' => 'Sisa serbuk kayu',
-            'jumlah' => '4'
+            'jumlah' => 4
         ]);
 
         Store::create([

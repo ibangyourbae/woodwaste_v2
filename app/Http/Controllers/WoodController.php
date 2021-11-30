@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AllWood;
+use App\Models\Store;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -22,7 +23,7 @@ class WoodController extends Controller
         ]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request,  Store $store){
         
         $validatedData = $request->validate([
             'wood_name' => ['required','max:25'],
@@ -36,7 +37,7 @@ class WoodController extends Controller
             $validatedData['image'] = $request->file('image')->store('images-wood');
         }
 
-        $validatedData['store_id'] = auth()->user()->id;
+        $validatedData['store_id'] = auth()->user()->store->id;
         $validatedData['slug'] = SlugService::createSlug(AllWood::class, 'slug', $validatedData['wood_name']);
         AllWood::create($validatedData);
         return redirect('/allwood')->with('success', 'Kerajinan Berhasil di buat !');
@@ -83,6 +84,35 @@ class WoodController extends Controller
         $allwood = AllWood::find($id);
         $allwood->delete();
         return redirect('/allwood')->with('success', 'Kerajinan berhasil dihapus');
+    }
+    public function updateStore(Request $request, $id, Store $store){
+        
+        $rules = [
+            'store_name' => 'required',
+            'store_address' => 'required',
+            'store_phone' => 'required',
+            'image' => 'image'
+        ];
+
+        if($request->slug != $store->slug){
+            $rules['slug'] = 'required|unique:stores';
+        }
+
+        $validatedData = $request->validate($rules);
+        if($request->file('image')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('images-store');
+        }
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['slug'] = SlugService::createSlug(Store::class, 'slug', $validatedData['store_name']);
+        
+
+        Store::where('id',$id)->update($validatedData);
+        // $woodpedia = Woodpedia::find($id)->update($request->all());
+        
+        return redirect('/allwood')->with('success', 'Toko Berhasil di update !');
     }
 
 

@@ -10,8 +10,8 @@
                 <div class="card-body">
                     <form action="/allwood-create" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <label for="store_name" class="form-label @error('store_name') is-invalid @enderror">{{ $store->store_name }}</label>
-                        <input class="form-control form-control-lg mt-3" type="text" id="store_name" name="store_name" value="{{ old('store_name',$store->store_name) }}">
+                        <label for="store_name" class="form-label @error('store_name') is-invalid @enderror">Nama Toko</label>
+                        <input class="form-control form-control-lg mt-3" type="text" id="store_name" name="store_name" value="{{ old('store_name') }}">
                         @error('store_name')
                         <div class="invalid-feedback">
                             {{ $message }}

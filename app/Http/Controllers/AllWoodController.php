@@ -70,36 +70,37 @@ class AllWoodController extends Controller
             'active' => 'allwood'
         ]);
     }
-    public function updateStore(Request $request, $id, Store $store){
-        return $request;
+    public function updateStore(Request $request, Store $store){
+        
         $rules = [
-            'store_name' => 'required',
-            'store_address' => 'required',
-            'store_phone' => 'required',
+            'store_name' => 'required|max:255',
+            'store_address' => 'required|max:255',
+            'store_phone' => 'required|max:25',
             'image' => 'image'
+            
         ];
 
         if($request->slug != $store->slug){
-            $rules['slug'] = 'required|unique:woodpedias';
+            $rules['slug'] = 'required|unique:stores';
         }
-
+        
+        
         $validatedData = $request->validate($rules);
+
         if($request->file('image')){
             if($request->oldImage){
                 Storage::delete($request->oldImage);
             }
-            $validatedData['image'] = $request->file('image')->store('images-wood');
+            $validatedData['image'] = $request->file('image')->store('image-store');
         }
-        $validatedData['store_id'] = auth()->user()->id;
-        $validatedData['slug'] = SlugService::createSlug(Store::class, 'slug', $validatedData['store_name']);
-        
 
-        Store::where('id',$id)->update($validatedData);
-        // $woodpedia = Woodpedia::find($id)->update($request->all());
+        $validatedData['user_id'] = auth()->user()->id;
+   
+
+        Store::where('id',$store->id)->update($validatedData);
+        
         
         return redirect('/allwood')->with('success', 'Toko Berhasil di update !');
-
-
     }
 
     

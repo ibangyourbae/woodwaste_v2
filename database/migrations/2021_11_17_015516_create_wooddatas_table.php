@@ -16,7 +16,7 @@ class CreateWooddatasTable extends Migration
         Schema::create('wooddatas', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('jumlah');
+            $table->integer('jumlah');
             $table->timestamps();
         });
     }

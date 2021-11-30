@@ -82,10 +82,9 @@ class AdminWooddataController extends Controller
    
 
 
-       
         $wooddata = Wooddata::find($id)->update($request->all());
         
-        return $wooddata;   
+         
 
         
         return redirect('/admin/wooddata')->with('success','Data berhasil diubah');

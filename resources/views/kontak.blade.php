@@ -41,10 +41,8 @@
 
         <img class="img-fluid mt-5 mb-3" width="100%" src="../img/Line 4.png" alt="">
         <h1 style="font-weight: bold;">Tentang Kami</h1>
-        <p>Woodwaste merupakan sebuah inovasi digital berupa Official Website untuk para pengrajin kayu dan para nelayan di sekitaran Desa Karangsong dalam rangka meningkatkan kepekaan terhadap penggunaan kayu. Woodwaste berfungsi memberikan informasi, mengedukasi,</p><br>
-        <p>
-            serta monitoring para pengrajin kayu dan nelayan. Dengan memanfaatkan platform ini harapannya tidak akan ada lagi kapal yang terbengkalai, lebih pekanya pengrajin terhadap limbah industri kayu, dan lahan akan menjadi lebih luas.
-        </p>
+        <p>WOODWASTE merupakan sebuah  inovasi digital berupa Official Website untuk para pengrajin kayu, mandor kapal, dan industri kreatif dalam rangka meningkatkan kepekaan terhadap penggunaan kayu sisa limbah yang bisa dimanfaatkan kembali. WOODWASTE berfungsi memberikan informasi, mengedukasi, dan memonitoring dari sisa limbah industri dan mempromosikannya kepada masyarakat.</p><br>
+       
         <img class="img-fluid mt-5 mb-3" width="100%" src="../img/Line 4.png" alt="">
         <h1 style="font-weight: bold;">Tim Woodwaste</h1><br>
 

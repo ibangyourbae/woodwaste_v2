@@ -7,7 +7,8 @@
             <div class="container layer3">
                 <div class="row mt-5">
                     <div class="card  card1" style="background-image: url('img/Group_94.png');">
-                        <h1 class="card-title mt-5" style="font-size: 30px;">Halo, selamat datang {{ auth()->user()->name }}</h1>
+                        <h1 class="card-title mt-5" style="font-size: 30px;">Halo, selamat datang {{ auth()->user()->name }}
+                        </h1>
                         <h2 class="subtitle"> Kontribusi dalam pengolahan limbah industri kayu sekarang</h2>
                     </div>
                 </div>
